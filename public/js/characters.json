@@ -1,114 +1,149 @@
 {
-	"characters": {
-		"men": [{
+	"characters": [
+		{
 			"id": 0,
-			"name": "Arthur"
+			"name": "Arthur",
+			"sex": "m"
 		}, {
 			"id": 1,
-			"name": "Azama"
+			"name": "Azama",
+			"sex": "m"
 		}, {
 			"id": 2,
-			"name": "Benny"
+			"name": "Benny",
+			"sex": "m"
 		}, {
 			"id": 3,
-			"name": "Hayato"
+			"name": "Hayato",
+			"sex": "m"
 		}, {
 			"id": 4,
-			"name": "Hinata"
+			"name": "Hinata",
+			"sex": "m"
 		}, {
 			"id": 5,
-			"name": "Jakob"
+			"name": "Jakob",
+			"sex": "m"
 		}, {
 			"id": 6,
-			"name": "Kaden"
+			"name": "Kaden",
+			"sex": "m"
 		}, {
 			"id": 7,
-			"name": "Kaze"
+			"name": "Kaze",
+			"sex": "m"
 		}, {
 			"id": 8,
-			"name": "Laslow"
+			"name": "Laslow",
+			"sex": "m"
 		}, {
 			"id": 9,
-			"name": "Leo"
+			"name": "Leo",
+			"sex": "m"
 		}, {
 			"id": 10,
-			"name": "Niles"
+			"name": "Niles",
+			"sex": "m"
 		}, {
 			"id": 11,
-			"name": "Odin"
+			"name": "Odin",
+			"sex": "m"
 		}, {
 			"id": 12,
-			"name": "Ryoma"
+			"name": "Ryoma",
+			"sex": "m"
 		}, {
 			"id": 13,
-			"name": "Saizo"
+			"name": "Saizo",
+			"sex": "m"
 		}, {
 			"id": 14,
-			"name": "Silas"
+			"name": "Silas",
+			"sex": "m"
 		}, {
 			"id": 15,
-			"name": "Subaki"
+			"name": "Subaki",
+			"sex": "m"
 		}, {
 			"id": 16,
-			"name": "Takumi"
+			"name": "Takumi",
+			"sex": "m"
 		}, {
 			"id": 17,
-			"name": "Xander"
-		}],
-		"women": [{
+			"name": "Xander",
+			"sex": "m"
+		}, {
 			"id": 18,
-			"name": "Azura"
+			"name": "Azura",
+			"sex": "f"
 		}, {
 			"id": 19,
-			"name": "Beruka"
+			"name": "Beruka",
+			"sex": "f"
 		}, {
 			"id": 20,
-			"name": "Camilla"
+			"name": "Camilla",
+			"sex": "f"
 		}, {
 			"id": 21,
-			"name": "Charlotte"
+			"name": "Charlotte",
+			"sex": "f"
 		}, {
 			"id": 22,
-			"name": "Effie"
+			"name": "Effie",
+			"sex": "f"
 		}, {
 			"id": 23,
-			"name": "Elise"
+			"name": "Elise",
+			"sex": "f"
 		}, {
 			"id": 24,
-			"name": "Felicia"
+			"name": "Felicia",
+			"sex": "f"
 		}, {
 			"id": 25,
-			"name": "Hana"
+			"name": "Hana",
+			"sex": "f"
 		}, {
 			"id": 26,
-			"name": "Hinoka"
+			"name": "Hinoka",
+			"sex": "f"
 		}, {
 			"id": 27,
-			"name": "Kagero"
+			"name": "Kagero",
+			"sex": "f"
 		}, {
 			"id": 28,
-			"name": "Mozu"
+			"name": "Mozu",
+			"sex": "f"
 		}, {
 			"id": 29,
-			"name": "Nyx"
+			"name": "Nyx",
+			"sex": "f"
 		}, {
 			"id": 30,
-			"name": "Oboro"
+			"name": "Oboro",
+			"sex": "f"
 		}, {
 			"id": 31,
-			"name": "Peri"
+			"name": "Peri",
+			"sex": "f"
 		}, {
 			"id": 32,
-			"name": "Rinkah"
+			"name": "Rinkah",
+			"sex": "f"
 		}, {
 			"id": 33,
-			"name": "Sakura"
+			"name": "Sakura",
+			"sex": "f"
 		}, {
 			"id": 34,
-			"name": "Selena"
+			"name": "Selena",
+			"sex": "f"
 		}, {
 			"id": 35,
-			"name": "Setsuna"
-		}]
-	}
+			"name": "Setsuna",
+			"sex": "f"
+		}
+	]
 }

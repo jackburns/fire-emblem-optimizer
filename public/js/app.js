@@ -2,24 +2,24 @@
 
 	function loadJSON(path, callback) {   
 
-	    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
+		var xobj = new XMLHttpRequest();
+		xobj.overrideMimeType("application/json");
     	xobj.open('GET', path, true); // Replace 'my_data' with the path to your file
-	    xobj.onreadystatechange = function () {
-		    if (xobj.readyState == 4 && xobj.status == "200") {
+    	xobj.onreadystatechange = function () {
+    		if (xobj.readyState == 4 && xobj.status == "200") {
 		        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
 		        callback(xobj.responseText);
-		  	}
-    	};
-    xobj.send(null);  
+		    }
+		};
+		xobj.send(null);  
 	}
 
 	loadJSON('/js/characters.json', function(response) {
-    	var actual_JSON = JSON.parse(response);
-    	computeMatching(actual_JSON);
- 	});
+		var actual_JSON = JSON.parse(response);
+		computeMatching([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]);
+	});
 
- 	function computeMatching(characters) {
+	function computeMatching(character_ids) {
 		var Inf = Number.POSITIVE_INFINITY;
 
 		var weights=[
@@ -43,10 +43,10 @@
 		     [8,     Inf,    Inf,     Inf,       Inf,   Inf,   6,       7,    7,      3,      6,    5,   1,     2,      Inf,  4,      4,      9,      5    ],//Subaki
 		     [5,     Inf,    4,       Inf,       Inf,   11,    7,       4,    Inf,    2,      5,    Inf, 3,     5,      Inf,  7,      Inf,    Inf,    5    ],//Takumi
 		     [5,     6,      Inf,     1,         8,     Inf,   5,       Inf,  3,      Inf,    5,    10,  Inf,   Inf,    7,    Inf,    5,      4,      Inf  ],//Xander
-		];
+		     ];
 
-		var all_men_list = ["Arthur","Azama","Benny","Hayato","Hinata","Jakob","Kaden","Kaze","Keaton","Laslow","Leo","Niles","Odin","Ryoma","Saizo","Silas","Subaki","Takumi","Xander"];
-		var all_wom_list = ["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Hana","Hinoka","Kagero","Mozu","Nyx","Oboro","Orochi","Peri","Rinkah","Sakura","Selena","Setsuna"];
+		     var all_men_list = ["Arthur","Azama","Benny","Hayato","Hinata","Jakob","Kaden","Kaze","Keaton","Laslow","Leo","Niles","Odin","Ryoma","Saizo","Silas","Subaki","Takumi","Xander"];
+		     var all_wom_list = ["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Hana","Hinoka","Kagero","Mozu","Nyx","Oboro","Orochi","Peri","Rinkah","Sakura","Selena","Setsuna"];
 
 		//List of input male names
 		var men_list = ["Arthur","Azama","Benny","Hayato","Hinata","Jakob","Kaden","Kaze","Keaton","Laslow","Leo","Niles","Odin","Ryoma","Saizo","Silas","Subaki","Takumi","Xander"];
@@ -81,16 +81,16 @@
 		}
 
 		var m = new Munkres();
-	//Calculated pairs
-	var indices = m.compute(cost_matrix);
+		//Calculated pairs
+		var indices = m.compute(cost_matrix);
 
 		//Calculated pairs
 		//var indices = m.compute(cost_matrix);
 
-	function ShowResults(pairing){
-		console.log("Father: " + men_list[pairing[0]] + " Mother: " + wom_list[pairing[1]] + " Point: " + cost_matrix[pairing[0]][pairing[1]]);
-		total_cost += cost_matrix[pairing[0]][pairing[1]];
-	}
+		function ShowResults(pairing){
+			console.log("Father: " + men_list[pairing[0]] + " Mother: " + wom_list[pairing[1]] + " Point: " + cost_matrix[pairing[0]][pairing[1]]);
+			total_cost += cost_matrix[pairing[0]][pairing[1]];
+		}
 
 		var total_cost = 0;
 		console.log(indices);
