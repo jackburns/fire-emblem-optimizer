@@ -50,10 +50,10 @@ var weights=[
 	var cost_matrix = [];
 
 	//Here we construct our new cost_matrix
-	for (var man_index; man_index < man_row_index.length; man_index++)
+	for (var man_index = 0; man_index < man_row_index.length; man_index++)
 	{
 		var modified_man_row = [];
-		for (var wom_index; wom_index < wom_row_index.length; wom_index++)
+		for (var wom_index = 0; wom_index < wom_row_index.length; wom_index++)
 		{
 			modified_man_row.push(weights[man_row_index][wom_index]);
 		}
@@ -63,7 +63,7 @@ var weights=[
 	var m = new Munkres();
 
 	//Calculated pairs
-	var indices = m.compute(cost_matrix);
+	//var indices = m.compute(cost_matrix);
 
 	//Calculated binary matrix
 	var indices = m.compute(weights);
