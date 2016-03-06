@@ -1,0 +1,15 @@
+{
+  "name": "fire-emblem",
+  "version": "0.0.0",
+  "description": "fire emblem",
+  "main": "server.js",
+  "dependencies": {
+    "munkres-js": "~1.1.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "author": "Ryan Kosha, Jack Burns",
+  "license": "BSD-2-Clause"
+}

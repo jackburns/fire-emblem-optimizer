@@ -1,0 +1,14 @@
+# Local stuff
+.DS_STORE
+.vagrant
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+npm-debug.log*
+
+# node stuff
+node_modules
+.npm
+.node_repl_history
+
