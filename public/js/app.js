@@ -65,12 +65,12 @@ var weights=[
 	//Calculated binary matrix
 	var indices = m.compute(weights);
 	var total_cost = 0;
+	console.log(indices);
 
 	for (var woman = 0; woman < wom_list.length; woman++)
 	{
 		for (var man = 0; man < men_list.length; man++)
 		{
-			console.log('heres a thing');
 			if (indices[man, woman] > 0)
 			{
 				//We got ourselves a match, yahoo
