@@ -3,147 +3,193 @@
 		{
 			"id": 0,
 			"name": "Arthur",
-			"sex": "m"
+			"sex": "m",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/0/07/Harold_portrait.png"
 		}, {
 			"id": 1,
 			"name": "Azama",
-			"sex": "m"
+			"sex": "m",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/a/a7/Asama_portrait.png"
 		}, {
 			"id": 2,
 			"name": "Benny",
-			"sex": "m"
+			"sex": "m",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/c/c2/Benoit_portrait.png"
 		}, {
 			"id": 3,
 			"name": "Hayato",
-			"sex": "m"
+			"sex": "m",
+			"imageURL": "http://vignette3.wikia.nocookie.net/fireemblem/images/5/52/Tsukuyomi_portrait.png"
 		}, {
 			"id": 4,
 			"name": "Hinata",
-			"sex": "m"
+			"sex": "m",
+			"imageURL": "http://vignette3.wikia.nocookie.net/fireemblem/images/a/a8/Hinata_portrait.png"
 		}, {
 			"id": 5,
 			"name": "Jakob",
-			"sex": "m"
+			"sex": "m",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/d/da/Joker_portrait.png"
 		}, {
 			"id": 6,
 			"name": "Kaden",
-			"sex": "m"
+			"sex": "m",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/1/12/Nishiki_portrait.png"
 		}, {
 			"id": 7,
 			"name": "Kaze",
-			"sex": "m"
+			"sex": "m",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/0/0e/Suzukaze_portrait.png"
 		}, {
 			"id": 8,
-			"name": "Laslow",
-			"sex": "m"
+			"name": "Keaton",
+			"sex": "m",
+			"imageURL": "http://vignette3.wikia.nocookie.net/fireemblem/images/2/2d/Flannel_Portrait.png"
 		}, {
 			"id": 9,
-			"name": "Leo",
-			"sex": "m"
+			"name": "Laslow",
+			"sex": "m",
+			"imageURL": "http://vignette3.wikia.nocookie.net/fireemblem/images/c/c8/Lazward_portrait.png"
 		}, {
 			"id": 10,
-			"name": "Niles",
-			"sex": "m"
+			"name": "Leo",
+			"sex": "m",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/6/66/Leo_portrait.png"
 		}, {
 			"id": 11,
-			"name": "Odin",
-			"sex": "m"
+			"name": "Niles",
+			"sex": "m",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/2/26/Zero_portrait.png"
 		}, {
 			"id": 12,
-			"name": "Ryoma",
-			"sex": "m"
+			"name": "Odin",
+			"sex": "m",
+			"imageURL": "http://vignette3.wikia.nocookie.net/fireemblem/images/4/47/Odin_portrait.png"
 		}, {
 			"id": 13,
-			"name": "Saizo",
-			"sex": "m"
+			"name": "Ryoma",
+			"sex": "m",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/1/1f/Ryoma_portrait.png"
 		}, {
 			"id": 14,
-			"name": "Silas",
-			"sex": "m"
+			"name": "Saizo",
+			"sex": "m",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/d/d5/Saizou_portrait.png"
 		}, {
 			"id": 15,
-			"name": "Subaki",
-			"sex": "m"
+			"name": "Silas",
+			"sex": "m",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/d/d0/Cyrus_portrait.png"
 		}, {
 			"id": 16,
-			"name": "Takumi",
-			"sex": "m"
+			"name": "Subaki",
+			"sex": "m",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/b/ba/Tsubaki_portrait.png"
 		}, {
 			"id": 17,
-			"name": "Xander",
-			"sex": "m"
+			"name": "Takumi",
+			"sex": "m",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/8/8a/Takumi_portrait.png"
 		}, {
 			"id": 18,
-			"name": "Azura",
-			"sex": "f"
+			"name": "Xander",
+			"sex": "m",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/4/42/Xander_portrait.png"
 		}, {
 			"id": 19,
-			"name": "Beruka",
-			"sex": "f"
+			"name": "Azura",
+			"sex": "f",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/a/a5/Aqua_portrait.png"
 		}, {
 			"id": 20,
-			"name": "Camilla",
-			"sex": "f"
+			"name": "Beruka",
+			"sex": "f",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/4/46/Belka_portrait.png"
 		}, {
 			"id": 21,
-			"name": "Charlotte",
-			"sex": "f"
+			"name": "Camilla",
+			"sex": "f",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/8/89/Camilla_portrait.png"
 		}, {
 			"id": 22,
-			"name": "Effie",
-			"sex": "f"
+			"name": "Charlotte",
+			"sex": "f",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/f/fb/Charlotte_portrait.png"
 		}, {
 			"id": 23,
-			"name": "Elise",
-			"sex": "f"
+			"name": "Effie",
+			"sex": "f",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/e/ee/Elfie_portrait.png"
 		}, {
 			"id": 24,
-			"name": "Felicia",
-			"sex": "f"
+			"name": "Elise",
+			"sex": "f",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/4/47/Elise_portrait.png"
 		}, {
 			"id": 25,
-			"name": "Hana",
-			"sex": "f"
+			"name": "Felicia",
+			"sex": "f",
+			"imageURL": "http://vignette3.wikia.nocookie.net/fireemblem/images/1/13/Felicia_portrait.png"
 		}, {
 			"id": 26,
-			"name": "Hinoka",
-			"sex": "f"
+			"name": "Hana",
+			"sex": "f",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/f/f2/Kazahana_portrait.png"
 		}, {
 			"id": 27,
-			"name": "Kagero",
-			"sex": "f"
+			"name": "Hinoka",
+			"sex": "f",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/6/6e/Hinoka_portrait.png"
 		}, {
 			"id": 28,
-			"name": "Mozu",
-			"sex": "f"
+			"name": "Kagero",
+			"sex": "f",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/0/05/Kagerou_portrait.png"
 		}, {
 			"id": 29,
-			"name": "Nyx",
-			"sex": "f"
+			"name": "Mozu",
+			"sex": "f",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/4/40/Mozume_portrait.png"
 		}, {
 			"id": 30,
-			"name": "Oboro",
-			"sex": "f"
+			"name": "Nyx",
+			"sex": "f",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/5/5a/Nyx_portrait.png"
 		}, {
 			"id": 31,
-			"name": "Peri",
-			"sex": "f"
+			"name": "Oboro",
+			"sex": "f",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/c/ca/Oboro_portrait.png"
 		}, {
 			"id": 32,
-			"name": "Rinkah",
-			"sex": "f"
+			"name": "Orochi",
+			"sex": "f",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/1/17/Orochi_portrait.png"
 		}, {
 			"id": 33,
-			"name": "Sakura",
-			"sex": "f"
+			"name": "Peri",
+			"sex": "f",
+			"imageURL": "http://vignette3.wikia.nocookie.net/fireemblem/images/c/c3/Pieri_portrait.png"
 		}, {
 			"id": 34,
-			"name": "Selena",
-			"sex": "f"
+			"name": "Rinkah",
+			"sex": "f",
+			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/2/29/Rinka_portrait.png"
 		}, {
 			"id": 35,
+			"name": "Sakura",
+			"sex": "f",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/f/f2/Sakura_portrait.png/"
+		}, {
+			"id": 36,
+			"name": "Selena",
+			"sex": "f",
+			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/f/f9/Luna_portrait.png"
+		}, {
+			"id": 37,
 			"name": "Setsuna",
-			"sex": "f"
+			"sex": "f",
+			"imageURL": "http://vignette1.wikia.nocookie.net/fireemblem/images/b/bc/Setsuna_portrait.png"
 		}
 	]
 }
