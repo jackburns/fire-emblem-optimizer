@@ -70,6 +70,7 @@ var weights=[
 	{
 		for (var man = 0; man < men_list.length; man++)
 		{
+			console.log('heres a thing');
 			if (indices[man, woman] > 0)
 			{
 				//We got ourselves a match, yahoo
