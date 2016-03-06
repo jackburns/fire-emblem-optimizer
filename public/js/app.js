@@ -29,9 +29,9 @@ var weights=[
 	var all_wom_list = ["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Hana","Hinoka","Kagero","Mozu","Nyx","Oboro","Orochi","Peri","Rinkah","Sakura","Selena","Setsuna"];
 
 	//List of input male names
-	var men_list = ["Dude1", "Dude2"];
+	var men_list = ["Arthur","Azama","Benny","Hayato","Hinata","Jakob","Kaden","Kaze","Keaton","Laslow","Leo","Niles","Odin","Ryoma","Saizo","Silas","Subaki","Takumi","Xander"];
 	//List of input female names
-	var wom_list = ["Chick1","Chick2"];
+	var wom_list = ["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Hana","Hinoka","Kagero","Mozu","Nyx","Oboro","Orochi","Peri","Rinkah","Sakura","Selena","Setsuna"];
 
 	var man_row_index = [];
 	var wom_row_index = [];
@@ -55,29 +55,23 @@ var weights=[
 		var modified_man_row = [];
 		for (var wom_index; wom_index < wom_row_index.length; wom_index++)
 		{
-			modified_man_row.push(weights[wom_index][man_row_index]);
+			modified_man_row.push(weights[man_row_index][wom_index]);
 		}
 		cost_matrix.push(modified_man_row);
 	}
 
 	var m = new Munkres();
 
-	//Calculated binary matrix
+	//Calculated pairs
 	var indices = m.compute(cost_matrix);
 	var total_cost = 0;
 
-	for (var woman = 0; woman < wom_list.length; woman++)
-	{
-		for (var man = 0; man < men_list.length; man++)
-		{
-			if (indices[man, woman] > 0)
-			{
-				//We got ourselves a match, yahoo
-				//Update total army cost from original grid
-				Console.log("Hello")
-				total_cost += cost_matrix[man, woman];
-			}
-		}
+	function ShowResults(pairing){
+		console.log("Father: " + men_list[pairing[0]] + "Mother: " + wom_list[pairing[1]]);
+		total_cost += cost_matrix[pairing[0], pairing[1]];
 	}
 
+	indices.forEach(ShowResults);
+
+	console.log(total_cost);
 })();
