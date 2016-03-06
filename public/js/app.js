@@ -16,89 +16,93 @@
 
 	loadJSON('/js/characters.json', function(response) {
 		var actual_JSON = JSON.parse(response);
-		computeMatching([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]);
+		computeMatching(actual_JSON.characters);
 	});
 
-	function computeMatching(character_ids) {
+	function computeMatching(characters) {
 		var Inf = Number.POSITIVE_INFINITY;
 
 		var weights=[
-			//Azura  Beruka  Camilla  Charlotte  Effie  Elise  Felicia  Hana  Hinoka  Kagero  Mozu  Nyx  Oboro  Orochi  Peri  Rinkah  Sakura  Selena  Setsuna
-			 [4,     4,      2,       3,         2,     11,    7,       Inf,  Inf,    2,      3,    10,  Inf,   Inf,    4,    Inf,    Inf,    3,      2    ],//Arthur
-		     [10,    8,      Inf,     Inf,       8,     Inf,   4,       5,    6,      3,      7,    Inf, 5,     4,      Inf,  7,      5,      Inf,    6    ],//Azama
-		     [7,     8,      3,       6,         8,     7,     8,       Inf,  Inf,    Inf,    4,    6,   4,     Inf,    3,    5,      Inf,    4,      Inf  ],//Benny 
-		     [9,     Inf,    Inf,     Inf,       5,     Inf,   2,       5,    4,      3,      7,    2,   3,     2,      Inf,  3,      2,      Inf,    7    ],//Hayato    
-		     [3,     Inf,    Inf,     Inf,       Inf,   Inf,   4,       2,    3,      1,      5,    Inf, 0,     2,      1,    2,      3,      2,      2    ],//Hinata
-		     [5,     6,      6,       2,         7,     7,     7,       4,    6,      2,      6,    5,   4,     6,      7,    8,      7,      5,      4    ],//Jakob
-		     [7,     Inf,    Inf,     3,         Inf,   Inf,   10,      7,    5,      3,      5,    Inf, 2,     7,      2,    3,      6,      Inf,    7    ],//Kaden
-		     [6,     2,      3,       3,         3,     11,    10,      7,    9,      3,      6,    10,  3,     8,      7,    3,      9,      8,      9    ],//Kaze
-		     [7,     5,      2,       3,         4,     11,    8,       2,    Inf,    Inf,    5,    10,  Inf,   Inf,    5,    3,      Inf,    4,      Inf  ],//Keaton
-		     [4,     5,      5,       2,         5,     11,    4,       3,    Inf,    Inf,    6,    10,  Inf,   4,      2,    Inf,    Inf,    6,      Inf  ],//Laslow
-		     [8,     9,      Inf,     8,         10,    Inf,   2,       Inf,  4,      Inf,    9,    3,   Inf,   Inf,    10,   Inf,    2,      6,      Inf  ],//Leo
-		     [6,     3,      2,       3,         4,     6,     6,       Inf,  Inf,    Inf,    3,    5,   3,     Inf,    4,    Inf,    Inf,    9,      4    ],//Niles
-		     [8,     6,      6,       6,         5,     3,     2,       Inf,  Inf,    8,      7,    3,   Inf,   3,      7,    Inf,    Inf,    8,      Inf  ],//Odin
-		     [6,     Inf,    5,       Inf,       Inf,   8,     8,       6,    Inf,    2,      5,    Inf, 3,     7,      Inf,  4,      Inf,    Inf,    6    ],//Ryoma
-		     [5,     4,      Inf,     2,         Inf,   Inf,   5,       4,    5,      2,      5,    Inf, 2,     2,      Inf,  6,      7,      Inf,    4    ],//Saizo
-		     [4,     5,      5,       3,         5,     10,    5,       3,    2,      3,      6,    9,   3,     7,      9,    8,      5,      2,      4    ],//Silas
-		     [8,     Inf,    Inf,     Inf,       Inf,   Inf,   6,       7,    7,      3,      6,    5,   1,     2,      Inf,  4,      4,      9,      5    ],//Subaki
-		     [5,     Inf,    4,       Inf,       Inf,   11,    7,       4,    Inf,    2,      5,    Inf, 3,     5,      Inf,  7,      Inf,    Inf,    5    ],//Takumi
-		     [5,     6,      Inf,     1,         8,     Inf,   5,       Inf,  3,      Inf,    5,    10,  Inf,   Inf,    7,    Inf,    5,      4,      Inf  ],//Xander
+			 //Azura                         Beruka                         Camilla                         Charlotte                        Effie                           Elise                           Felicia                      Hana                             Hinoka                          Kagero                          Mozu                          Nyx                             Oboro                           Orochi                          Peri                            Rinkah                          Sakura                           Selena                         Setsuna
+			 [{id1: 0, id2: 19, weight: 4}, {id1: 0, id2: 20, weight: 4},   {id1: 0, id2: 21, weight: 2},   {id1: 0, id2: 22, weight: 3},   {id1: 0, id2: 23, weight: 2},   {id1: 0, id2: 24, weight: 11},  {id1: 0, id2: 25, weight: 7}, {id1: 0, id2: 26, weight: Inf}, {id1: 0, id2: 27, weight: Inf}, {id1: 0, id2: 28, weight: 2},   {id1: 0, id2: 29, weight: 3}, {id1: 0, id2: 30, weight: 10},  {id1: 0, id2: 31, weight: Inf}, {id1: 0, id2: 32, weight: Inf}, {id1: 0, id2: 33, weight: 4},   {id1: 0, id2: 34, weight: Inf}, {id1: 0, id2: 35, weight: Inf}, {id1: 0, id2: 36, weight: 3},   {id1: 0, id2: 37, weight: 2}],   //Arthur
+		     [{id1: 1, id2: 19, weight: 10},{id1: 1, id2: 20, weight: 8},   {id1: 1, id2: 21, weight: Inf}, {id1: 1, id2: 22, weight: Inf}, {id1: 1, id2: 23, weight: 8},   {id1: 1, id2: 24, weight: Inf}, {id1: 1, id2: 25, weight: 4}, {id1: 1, id2: 26, weight: 5},   {id1: 1, id2: 27, weight: 6},   {id1: 1, id2: 28, weight: 3},   {id1: 1, id2: 29, weight: 7}, {id1: 1, id2: 30, weight: Inf}, {id1: 1, id2: 31, weight: 5},   {id1: 1, id2: 32, weight: 4},   {id1: 1, id2: 33, weight: Inf}, {id1: 1, id2: 34, weight: 7},   {id1: 1, id2: 35, weight: 5},   {id1: 1, id2: 36, weight: Inf}, {id1: 1, id2: 37, weight: 6}],   //Azama
+			 [{id1: 2, id2: 19, weight: 7}, {id1: 2, id2: 20, weight: 8},   {id1: 2, id2: 21, weight: 3},   {id1: 2, id2: 22, weight: 6},   {id1: 2, id2: 23, weight: 8},   {id1: 2, id2: 24, weight: 7},   {id1: 2, id2: 25, weight: 8}, {id1: 2, id2: 26, weight: Inf}, {id1: 2, id2: 27, weight: Inf}, {id1: 2, id2: 28, weight: Inf}, {id1: 2, id2: 29, weight: 4}, {id1: 2, id2: 30, weight: 6},   {id1: 2, id2: 31, weight: 4},   {id1: 2, id2: 32, weight: Inf}, {id1: 2, id2: 33, weight: 3},   {id1: 2, id2: 34, weight: 5},   {id1: 2, id2: 35, weight: Inf}, {id1: 2, id2: 36, weight: 4},   {id1: 2, id2: 37, weight: Inf}], //Benny 
+		     [{id1: 3, id2: 19, weight: 9}, {id1: 3, id2: 20, weight: Inf}, {id1: 3, id2: 21, weight: Inf}, {id1: 3, id2: 22, weight: Inf}, {id1: 3, id2: 23, weight: 5},   {id1: 3, id2: 24, weight: Inf}, {id1: 3, id2: 25, weight: 2}, {id1: 3, id2: 26, weight: 5},   {id1: 3, id2: 27, weight: 4},   {id1: 3, id2: 28, weight: 3},   {id1: 3, id2: 29, weight: 7}, {id1: 3, id2: 30, weight: 2},   {id1: 3, id2: 31, weight: 3},   {id1: 3, id2: 32, weight: 2},   {id1: 3, id2: 33, weight: Inf}, {id1: 3, id2: 34, weight: 3},   {id1: 3, id2: 35, weight: 2},   {id1: 3, id2: 36, weight: Inf}, {id1: 3, id2: 37, weight: 7}],   //Hayato
+			 [{id1: 4, id2: 19, weight: 3}, {id1: 4, id2: 20, weight: Inf}, {id1: 4, id2: 21, weight: Inf}, {id1: 4, id2: 22, weight: Inf}, {id1: 4, id2: 23, weight: Inf}, {id1: 4, id2: 24, weight: Inf}, {id1: 4, id2: 25, weight: 4}, {id1: 4, id2: 26, weight: 2},   {id1: 4, id2: 27, weight: 3},   {id1: 4, id2: 28, weight: 1},   {id1: 4, id2: 29, weight: 5}, {id1: 4, id2: 30, weight: Inf}, {id1: 4, id2: 31, weight: 0},   {id1: 4, id2: 32, weight: 2},   {id1: 4, id2: 33, weight: 1},   {id1: 4, id2: 34, weight: 2},   {id1: 4, id2: 35, weight: 3},   {id1: 4, id2: 36, weight: 2},   {id1: 4, id2: 37, weight: 2}],   //Hinata
+			 [{id1: 5, id2: 19, weight: 5}, {id1: 5, id2: 20, weight: 6},   {id1: 5, id2: 21, weight: 6},   {id1: 5, id2: 22, weight: 2},   {id1: 5, id2: 23, weight: 7},   {id1: 5, id2: 24, weight: 7},   {id1: 5, id2: 25, weight: 7}, {id1: 5, id2: 26, weight: 4},   {id1: 5, id2: 27, weight: 6},   {id1: 5, id2: 28, weight: 2},   {id1: 5, id2: 29, weight: 6}, {id1: 5, id2: 30, weight: 5},   {id1: 5, id2: 31, weight: 4},   {id1: 5, id2: 32, weight: 6},   {id1: 5, id2: 33, weight: 7},   {id1: 5, id2: 34, weight: 8},   {id1: 5, id2: 35, weight: 7},   {id1: 5, id2: 36, weight: 5},   {id1: 5, id2: 37, weight: 4}],   //Jakob
+			 [{id1: 6, id2: 19, weight: 7}, {id1: 6, id2: 20, weight: Inf}, {id1: 6, id2: 21, weight: Inf}, {id1: 6, id2: 22, weight: 3},   {id1: 6, id2: 23, weight: Inf}, {id1: 6, id2: 24, weight: Inf}, {id1: 6, id2: 25, weight: 10},{id1: 6, id2: 26, weight: 7},   {id1: 6, id2: 27, weight: 5},   {id1: 6, id2: 28, weight: 3},   {id1: 6, id2: 29, weight: 5}, {id1: 6, id2: 30, weight: Inf}, {id1: 6, id2: 31, weight: 2},   {id1: 6, id2: 32, weight: 7},   {id1: 6, id2: 33, weight: 2},   {id1: 6, id2: 34, weight: 3},   {id1: 6, id2: 35, weight: 6},   {id1: 6, id2: 36, weight: Inf}, {id1: 6, id2: 37, weight: 7}],   //Kaden
+			 [{id1: 7, id2: 19, weight: 6}, {id1: 7, id2: 20, weight: 2},   {id1: 7, id2: 21, weight: 3},   {id1: 7, id2: 22, weight: 3},   {id1: 7, id2: 23, weight: 3},   {id1: 7, id2: 24, weight: 11},  {id1: 7, id2: 25, weight: 10},{id1: 7, id2: 26, weight: 7},   {id1: 7, id2: 27, weight: 9},   {id1: 7, id2: 28, weight: 3},   {id1: 7, id2: 29, weight: 6}, {id1: 7, id2: 30, weight: 10},  {id1: 7, id2: 31, weight: 3},   {id1: 7, id2: 32, weight: 8},   {id1: 7, id2: 33, weight: 7},   {id1: 7, id2: 34, weight: 3},   {id1: 7, id2: 35, weight: 9},   {id1: 7, id2: 36, weight: 8},   {id1: 7, id2: 37, weight: 9}],   //Kaze
+			 [{id1: 8, id2: 19, weight: 7}, {id1: 8, id2: 20, weight: 5},   {id1: 8, id2: 21, weight: 2},   {id1: 8, id2: 22, weight: 3},   {id1: 8, id2: 23, weight: 4},   {id1: 8, id2: 24, weight: 11},  {id1: 8, id2: 25, weight: 8}, {id1: 8, id2: 26, weight: 2},   {id1: 8, id2: 27, weight: Inf}, {id1: 8, id2: 28, weight: Inf}, {id1: 8, id2: 29, weight: 5}, {id1: 8, id2: 30, weight: 10},  {id1: 8, id2: 31, weight: Inf}, {id1: 8, id2: 32, weight: Inf}, {id1: 8, id2: 33, weight: 5},   {id1: 8, id2: 34, weight: 3},   {id1: 8, id2: 35, weight: Inf}, {id1: 8, id2: 36, weight: 4},   {id1: 8, id2: 37, weight: Inf}], //Keaton
+			 [{id1: 9, id2: 19, weight: 4}, {id1: 9, id2: 20, weight: 5},   {id1: 9, id2: 21, weight: 5},   {id1: 9, id2: 22, weight: 2},   {id1: 9, id2: 23, weight: 5},   {id1: 9, id2: 24, weight: 11},  {id1: 9, id2: 25, weight: 4}, {id1: 9, id2: 26, weight: 3},   {id1: 9, id2: 27, weight: Inf}, {id1: 9, id2: 28, weight: Inf}, {id1: 9, id2: 29, weight: 6}, {id1: 9, id2: 30, weight: 10},  {id1: 9, id2: 31, weight: Inf}, {id1: 9, id2: 32, weight: 4},   {id1: 9, id2: 33, weight: 2},   {id1: 9, id2: 34, weight: Inf}, {id1: 9, id2: 35, weight: Inf}, {id1: 9, id2: 36, weight: 6},   {id1: 9, id2: 37, weight: Inf}], //Laslow
+		     [{id1: 10, id2: 19, weight: 8},{id1: 10, id2: 20, weight: 9},  {id1: 10, id2: 21, weight: Inf},{id1: 10, id2: 22, weight: 8},  {id1: 10, id2: 23, weight: 10}, {id1: 10, id2: 24, weight: Inf},{id1: 10, id2: 25, weight: 2},{id1: 10, id2: 26, weight: Inf},{id1: 10, id2: 27, weight: 4},  {id1: 10, id2: 28, weight: Inf},{id1: 10, id2: 29, weight: 9},{id1: 10, id2: 30, weight: 3},  {id1: 10, id2: 31, weight: Inf},{id1: 10, id2: 32, weight: Inf},{id1: 10, id2: 33, weight: 10}, {id1: 10, id2: 34, weight: Inf},{id1: 10, id2: 35, weight: 2},  {id1: 10, id2: 36, weight: 6},  {id1: 10, id2: 37, weight: Inf}],//Leo
+		     [{id1: 11, id2: 19, weight: 6},{id1: 11, id2: 20, weight: 3},  {id1: 11, id2: 21, weight: 2},  {id1: 11, id2: 22, weight: 3},  {id1: 11, id2: 23, weight: 4},  {id1: 11, id2: 24, weight: 6},  {id1: 11, id2: 25, weight: 6},{id1: 11, id2: 26, weight: Inf},{id1: 11, id2: 27, weight: Inf},{id1: 11, id2: 28, weight: Inf},{id1: 11, id2: 29, weight: 3},{id1: 11, id2: 30, weight: 5},  {id1: 11, id2: 31, weight: 3},  {id1: 11, id2: 32, weight: Inf},{id1: 11, id2: 33, weight: 4},  {id1: 11, id2: 34, weight: Inf},{id1: 11, id2: 35, weight: Inf},{id1: 11, id2: 36, weight: 9},  {id1: 11, id2: 37, weight: 4}],  //Niles		     
+		     [{id1: 12, id2: 19, weight: 8},{id1: 12, id2: 20, weight: 6},  {id1: 12, id2: 21, weight: 6},  {id1: 12, id2: 22, weight: 6},  {id1: 12, id2: 23, weight: 5},  {id1: 12, id2: 24, weight: 3},  {id1: 12, id2: 25, weight: 2},{id1: 12, id2: 26, weight: Inf},{id1: 12, id2: 27, weight: Inf},{id1: 12, id2: 28, weight: 8},  {id1: 12, id2: 29, weight: 7},{id1: 12, id2: 30, weight: 3},  {id1: 12, id2: 31, weight: Inf},{id1: 12, id2: 32, weight: 3},  {id1: 12, id2: 33, weight: 7},  {id1: 12, id2: 34, weight: Inf},{id1: 12, id2: 35, weight: Inf},{id1: 12, id2: 36, weight: 8},  {id1: 12, id2: 37, weight: Inf}],//Odin		     
+		     [{id1: 13, id2: 19, weight: 6},{id1: 13, id2: 20, weight: Inf},{id1: 13, id2: 21, weight: 5},  {id1: 13, id2: 22, weight: Inf},{id1: 13, id2: 23, weight: Inf},{id1: 13, id2: 24, weight: 8},  {id1: 13, id2: 25, weight: 8},{id1: 13, id2: 26, weight: 6},  {id1: 13, id2: 27, weight: Inf},{id1: 13, id2: 28, weight: 2},  {id1: 13, id2: 29, weight: 5},{id1: 13, id2: 30, weight: Inf},{id1: 13, id2: 31, weight: 3},  {id1: 13, id2: 32, weight: 7},  {id1: 13, id2: 33, weight: Inf},{id1: 13, id2: 34, weight: 4},  {id1: 13, id2: 35, weight: Inf},{id1: 13, id2: 36, weight: Inf},{id1: 13, id2: 37, weight: 6}],  //Ryoma
+		     [{id1: 14, id2: 19, weight: 5},{id1: 14, id2: 20, weight: 4},  {id1: 14, id2: 21, weight: Inf},{id1: 14, id2: 22, weight: 2},  {id1: 14, id2: 23, weight: Inf},{id1: 14, id2: 24, weight: Inf},{id1: 14, id2: 25, weight: 5},{id1: 14, id2: 26, weight: 4},  {id1: 14, id2: 27, weight: 5},  {id1: 14, id2: 28, weight: 2},  {id1: 14, id2: 29, weight: 5},{id1: 14, id2: 30, weight: Inf},{id1: 14, id2: 31, weight: 2},  {id1: 14, id2: 32, weight: 2},  {id1: 14, id2: 33, weight: Inf},{id1: 14, id2: 34, weight: 6},  {id1: 14, id2: 35, weight: 7},  {id1: 14, id2: 36, weight: Inf},{id1: 14, id2: 37, weight: 4}],  //Saizo
+		     [{id1: 15, id2: 19, weight: 4},{id1: 15, id2: 20, weight: 5},  {id1: 15, id2: 21, weight: 5},  {id1: 15, id2: 22, weight: 3},  {id1: 15, id2: 23, weight: 5},  {id1: 15, id2: 24, weight: 10}, {id1: 15, id2: 25, weight: 5},{id1: 15, id2: 26, weight: 3},  {id1: 15, id2: 27, weight: 2},  {id1: 15, id2: 28, weight: 3},  {id1: 15, id2: 29, weight: 6},{id1: 15, id2: 30, weight: 9},  {id1: 15, id2: 31, weight: 3},  {id1: 15, id2: 32, weight: 7},  {id1: 15, id2: 33, weight: 9},  {id1: 15, id2: 34, weight: 8},  {id1: 15, id2: 35, weight: 5},  {id1: 15, id2: 36, weight: 2},  {id1: 15, id2: 37, weight: 4}],  //Silas
+		     [{id1: 16, id2: 19, weight: 8},{id1: 16, id2: 20, weight: Inf},{id1: 16, id2: 21, weight: Inf},{id1: 16, id2: 22, weight: Inf},{id1: 16, id2: 23, weight: Inf},{id1: 16, id2: 24, weight: Inf},{id1: 16, id2: 25, weight: 6},{id1: 16, id2: 26, weight: 7},  {id1: 16, id2: 27, weight: 7},  {id1: 16, id2: 28, weight: 3},  {id1: 16, id2: 29, weight: 6},{id1: 16, id2: 30, weight: 5},  {id1: 16, id2: 31, weight: 1},  {id1: 16, id2: 32, weight: 2},  {id1: 16, id2: 33, weight: Inf},{id1: 16, id2: 34, weight: 4},  {id1: 16, id2: 35, weight: 4},  {id1: 16, id2: 36, weight: 9},  {id1: 16, id2: 37, weight: 5}],  //Subaki
+		     [{id1: 17, id2: 19, weight: 5},{id1: 17, id2: 20, weight: Inf},{id1: 17, id2: 21, weight: 4},  {id1: 17, id2: 22, weight: Inf},{id1: 17, id2: 23, weight: Inf},{id1: 17, id2: 24, weight: 11}, {id1: 17, id2: 25, weight: 7},{id1: 17, id2: 26, weight: 4},  {id1: 17, id2: 27, weight: Inf},{id1: 17, id2: 28, weight: 2},  {id1: 17, id2: 29, weight: 5},{id1: 17, id2: 30, weight: Inf},{id1: 17, id2: 31, weight: 3},  {id1: 17, id2: 32, weight: 5},  {id1: 17, id2: 33, weight: Inf},{id1: 17, id2: 34, weight: 7},  {id1: 17, id2: 35, weight: Inf},{id1: 17, id2: 36, weight: Inf},{id1: 17, id2: 37, weight: 5}],  //Takumi
+		     [{id1: 18, id2: 19, weight: 5},{id1: 18, id2: 20, weight: 6},  {id1: 18, id2: 21, weight: Inf},{id1: 18, id2: 22, weight: 1},  {id1: 18, id2: 23, weight: 8},  {id1: 18, id2: 24, weight: Inf},{id1: 18, id2: 25, weight: 5},{id1: 18, id2: 26, weight: Inf},{id1: 18, id2: 27, weight: 3},  {id1: 18, id2: 28, weight: Inf},{id1: 18, id2: 29, weight: 5},{id1: 18, id2: 30, weight: 10}, {id1: 18, id2: 31, weight: Inf},{id1: 18, id2: 32, weight: Inf},{id1: 18, id2: 33, weight: 7},  {id1: 18, id2: 34, weight: Inf},{id1: 18, id2: 35, weight: 5},  {id1: 18, id2: 36, weight: 4},  {id1: 18, id2: 37, weight: Inf}],//Xander
 		     ];
 
-		     var all_men_list = ["Arthur","Azama","Benny","Hayato","Hinata","Jakob","Kaden","Kaze","Keaton","Laslow","Leo","Niles","Odin","Ryoma","Saizo","Silas","Subaki","Takumi","Xander"];
-		     var all_wom_list = ["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Hana","Hinoka","Kagero","Mozu","Nyx","Oboro","Orochi","Peri","Rinkah","Sakura","Selena","Setsuna"];
+	    function getWeightByIds(id1, id2) {
+	    	var result;
+	    	for (var i = 0; i < rows.length; i++) {
+	    		for (var j = 0; j < cols.length; j++) {
+	    			if (weights[i][j].id1 === id1 && weights[i][j].id2 === id2) {
+	    				result = weights[i][j].weight;
+	    				break;
+	    			}
+	    		}
+	    	}
+	    	console.log(result);
+	    	return result;
+	    }
 
-		//List of input male names
-		var men_list = ["Arthur","Azama","Benny","Hayato","Hinata","Jakob","Kaden","Kaze","Keaton","Laslow","Leo","Niles","Odin","Ryoma","Saizo","Silas","Subaki","Takumi","Xander"];
-		//List of input female names
-		var wom_list = ["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Hana","Hinoka","Kagero","Mozu","Nyx","Oboro","Orochi","Peri","Rinkah","Sakura","Selena","Setsuna"];
-
-		var man_row_index = [];
-		var wom_row_index = [];
-
-		//Fill array with row numbers we are interested in
-		for (var i = 0; i < men_list.length; i++) 
+		var rows = [];
+		var cols = [];
+		for (var i = 0; i < characters.length; i++)
 		{
-			man_row_index.push(all_men_list.indexOf(men_list[i]));
+			if (characters[i].sex === "m") { 
+				rows.push(characters[i]);
+			} else{ 
+				cols.push(characters[i]);
+			}
 		}
-		//Fill array with column numbers we are interested in
-		for (var i = 0; i < wom_list.length; i++)
-		{
-			wom_row_index.push(all_wom_list.indexOf(wom_list[i]));
-		}
-
 		var cost_matrix = [];
+		var mapping_matrix = [];
 
 		//Here we construct our new cost_matrix
-		for (var man_index = 0; man_index < man_row_index.length; man_index++)
+		for (var r_index = 0; r_index < rows.length; r_index++)
 		{
-			var modified_man_row = [];
-			for (var wom_index = 0; wom_index < wom_row_index.length; wom_index++)
+			var modified_cost_row = [];
+			var modified_mapping_row = [];
+
+			for (var c_index = 0; c_index < cols.length; c_index++)
 			{
-				modified_man_row.push(weights[man_index][wom_index]);
+				modified_mapping_row.push({
+					"id1": rows[r_index].id,
+					"id2": cols[c_index].id
+				});
+				modified_cost_row.push(getWeightByIds(rows[r_index].id, cols[c_index].id));
 			}
-			cost_matrix.push(modified_man_row);
+			mapping_matrix.push(modified_mapping_row);
+			cost_matrix.push(modified_cost_row);
 		}
 
 		var m = new Munkres();
+
 		//Calculated pairs
 		var indices = m.compute(cost_matrix);
-
-		//Calculated pairs
-		//var indices = m.compute(cost_matrix);
+		console.log(indices);
 
 		function ShowResults(pairing){
-			console.log("Father: " + men_list[pairing[0]] + " Mother: " + wom_list[pairing[1]] + " Point: " + cost_matrix[pairing[0]][pairing[1]]);
+			var ids = mapping_matrix[pairing[0]][pairing[1]];
+			console.log("Father: " + ids.id1 + " Mother: " + ids.id2 + " Point: " + cost_matrix[pairing[0]][pairing[1]]);
 			total_cost += cost_matrix[pairing[0]][pairing[1]];
 		}
 
 		var total_cost = 0;
-		console.log(indices);
-
-		function ShowResults(pairing){
-			console.log("Father: " + men_list[pairing[0]] + "Mother: " + wom_list[pairing[1]]);
-			total_cost += cost_matrix[pairing[0], pairing[1]];
-		}
 
 		indices.forEach(ShowResults);
 
