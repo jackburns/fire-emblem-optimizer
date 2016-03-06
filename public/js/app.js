@@ -81,12 +81,16 @@
 		}
 
 		var m = new Munkres();
+	//Calculated pairs
+	var indices = m.compute(cost_matrix);
 
 		//Calculated pairs
 		//var indices = m.compute(cost_matrix);
 
-		//Calculated binary matrix
-		var indices = m.compute(weights);
+	function ShowResults(pairing){
+		console.log("Father: " + men_list[pairing[0]] + " Mother: " + wom_list[pairing[1]] + " Point: " + cost_matrix[pairing[0]][pairing[1]]);
+		total_cost += cost_matrix[pairing[0]][pairing[1]];
+	}
 
 		var total_cost = 0;
 		console.log(indices);
