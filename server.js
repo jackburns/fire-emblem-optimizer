@@ -3,8 +3,7 @@ var path = require('path');
 var app = express();
 
 var isProduction = process.env.NODE_ENV === 'production';
-console.log(isProduction);
-var port = "80";
+var port = isProduction ? process.env.PORT : 3000;
 var publicPath = path.resolve(__dirname, 'public');
 
 // We point to our static assets
