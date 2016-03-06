@@ -1,4 +1,4 @@
-(function {
+(function() {
 	var Inf = Number.POSITIVE_INFINITY;
 
 var weights=[
@@ -64,7 +64,12 @@ var weights=[
 
 	//Calculated pairs
 	var indices = m.compute(cost_matrix);
+
+	//Calculated binary matrix
+	var indices = m.compute(weights);
+
 	var total_cost = 0;
+	console.log(indices);
 
 	function ShowResults(pairing){
 		console.log("Father: " + men_list[pairing[0]] + "Mother: " + wom_list[pairing[1]]);
