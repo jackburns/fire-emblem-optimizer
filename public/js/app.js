@@ -55,7 +55,7 @@ var weights=[
 		var modified_man_row = [];
 		for (var wom_index = 0; wom_index < wom_row_index.length; wom_index++)
 		{
-			modified_man_row.push(weights[man_row_index][wom_index]);
+			modified_man_row.push(weights[man_index][wom_index]);
 		}
 		cost_matrix.push(modified_man_row);
 	}
