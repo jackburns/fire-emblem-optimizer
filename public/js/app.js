@@ -63,7 +63,7 @@ var weights=[
 	var m = new Munkres();
 
 	//Calculated binary matrix
-	var indices = m.compute(cost_matrix);
+	var indices = m.compute(weights);
 	var total_cost = 0;
 
 	for (var woman = 0; woman < wom_list.length; woman++)
