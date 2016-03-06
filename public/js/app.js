@@ -1,4 +1,4 @@
-(function {
+(function() {
 	var Inf = Number.POSITIVE_INFINITY;
 
 var weights=[
