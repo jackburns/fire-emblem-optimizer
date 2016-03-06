@@ -16,7 +16,7 @@
 
 	loadJSON('/js/characters.json', function(response) {
 		var actual_JSON = JSON.parse(response);
-		computeMatching(actual_JSON);
+		computeMatching(actual_JSON.characters);
 	});
 
 	function computeMatching(characters) {
@@ -45,12 +45,29 @@
 		     [{id1: 18, id2: 19, weight: 5},{id1: 18, id2: 20, weight: 6},  {id1: 18, id2: 21, weight: Inf},{id1: 18, id2: 22, weight: 1},  {id1: 18, id2: 23, weight: 8},  {id1: 18, id2: 24, weight: Inf},{id1: 18, id2: 25, weight: 5},{id1: 18, id2: 26, weight: Inf},{id1: 18, id2: 27, weight: 3},  {id1: 18, id2: 28, weight: Inf},{id1: 18, id2: 29, weight: 5},{id1: 18, id2: 30, weight: 10}, {id1: 18, id2: 31, weight: Inf},{id1: 18, id2: 32, weight: Inf},{id1: 18, id2: 33, weight: 7},  {id1: 18, id2: 34, weight: Inf},{id1: 18, id2: 35, weight: 5},  {id1: 18, id2: 36, weight: 4},  {id1: 18, id2: 37, weight: Inf}],//Xander
 		     ];
 
+	    function getWeightByIds(id1, id2) {
+	    	var result;
+	    	for (var i = 0; i < rows.length; i++) {
+	    		for (var j = 0; j < cols.length; j++) {
+	    			if (weights[i][j].id1 === id1 && weights[i][j].id2 === id2) {
+	    				result = weights[i][j].weight;
+	    				break;
+	    			}
+	    		}
+	    	}
+	    	console.log(result);
+	    	return result;
+	    }
+
 		var rows = [];
 		var cols = [];
 		for (var i = 0; i < characters.length; i++)
 		{
-			if (characters[i].sex === "m") rows.push(characters[i]);
-			else cols.push(characters[i]);
+			if (characters[i].sex === "m") { 
+				rows.push(characters[i]);
+			} else{ 
+				cols.push(characters[i]);
+			}
 		}
 		var cost_matrix = [];
 		var mapping_matrix = [];
@@ -58,33 +75,34 @@
 		//Here we construct our new cost_matrix
 		for (var r_index = 0; r_index < rows.length; r_index++)
 		{
-			var modified_row = [];
+			var modified_cost_row = [];
+			var modified_mapping_row = [];
+
 			for (var c_index = 0; c_index < cols.length; c_index++)
 			{
-				modified_row.push(weights[rows[r_index]][c_index]).weight;
+				modified_mapping_row.push({
+					"id1": rows[r_index].id,
+					"id2": cols[c_index].id
+				});
+				modified_cost_row.push(getWeightByIds(rows[r_index].id, cols[c_index].id));
 			}
-			cost_matrix.push(modified_row);
+			mapping_matrix.push(modified_mapping_row);
+			cost_matrix.push(modified_cost_row);
 		}
 
 		var m = new Munkres();
+
 		//Calculated pairs
 		var indices = m.compute(cost_matrix);
-
-		//Calculated pairs
-		//var indices = m.compute(cost_matrix);
+		console.log(indices);
 
 		function ShowResults(pairing){
-			console.log("Father: " + men_list[pairing[0]] + " Mother: " + wom_list[pairing[1]] + " Point: " + cost_matrix[pairing[0]][pairing[1]]);
+			var ids = mapping_matrix[pairing[0]][pairing[1]];
+			console.log("Father: " + ids.id1 + " Mother: " + ids.id2 + " Point: " + cost_matrix[pairing[0]][pairing[1]]);
 			total_cost += cost_matrix[pairing[0]][pairing[1]];
 		}
 
 		var total_cost = 0;
-		console.log(indices);
-
-		function ShowResults(pairing){
-			console.log("Father: " + men_list[pairing[0]] + "Mother: " + wom_list[pairing[1]]);
-			total_cost += cost_matrix[pairing[0], pairing[1]];
-		}
 
 		indices.forEach(ShowResults);
 
