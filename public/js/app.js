@@ -45,39 +45,25 @@
 		     [{id1: 18, id2: 19, weight: 5},{id1: 18, id2: 20, weight: 6},  {id1: 18, id2: 21, weight: Inf},{id1: 18, id2: 22, weight: 1},  {id1: 18, id2: 23, weight: 8},  {id1: 18, id2: 24, weight: Inf},{id1: 18, id2: 25, weight: 5},{id1: 18, id2: 26, weight: Inf},{id1: 18, id2: 27, weight: 3},  {id1: 18, id2: 28, weight: Inf},{id1: 18, id2: 29, weight: 5},{id1: 18, id2: 30, weight: 10}, {id1: 18, id2: 31, weight: Inf},{id1: 18, id2: 32, weight: Inf},{id1: 18, id2: 33, weight: 7},  {id1: 18, id2: 34, weight: Inf},{id1: 18, id2: 35, weight: 5},  {id1: 18, id2: 36, weight: 4},  {id1: 18, id2: 37, weight: Inf}],//Xander
 		     ];
 
-		     var all_men_list = ["Arthur","Azama","Benny","Hayato","Hinata","Jakob","Kaden","Kaze","Keaton","Laslow","Leo","Niles","Odin","Ryoma","Saizo","Silas","Subaki","Takumi","Xander"];
-		     var all_wom_list = ["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Hana","Hinoka","Kagero","Mozu","Nyx","Oboro","Orochi","Peri","Rinkah","Sakura","Selena","Setsuna"];
-
-		//List of input male names
-		var men_list = ["Arthur","Azama","Benny","Hayato","Hinata","Jakob","Kaden","Kaze","Keaton","Laslow","Leo","Niles","Odin","Ryoma","Saizo","Silas","Subaki","Takumi","Xander"];
-		//List of input female names
-		var wom_list = ["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Hana","Hinoka","Kagero","Mozu","Nyx","Oboro","Orochi","Peri","Rinkah","Sakura","Selena","Setsuna"];
-
-		var man_row_index = [];
-		var wom_row_index = [];
-
-		//Fill array with row numbers we are interested in
-		for (var i = 0; i < men_list.length; i++) 
+		var rows = [];
+		var cols = [];
+		for (var i = 0; i < characters.length; i++)
 		{
-			man_row_index.push(all_men_list.indexOf(men_list[i]));
+			if (characters[i].sex === "m") rows.push(characters[i]);
+			else cols.push(characters[i]);
 		}
-		//Fill array with column numbers we are interested in
-		for (var i = 0; i < wom_list.length; i++)
-		{
-			wom_row_index.push(all_wom_list.indexOf(wom_list[i]));
-		}
-
 		var cost_matrix = [];
+		var mapping_matrix = [];
 
 		//Here we construct our new cost_matrix
-		for (var man_index = 0; man_index < man_row_index.length; man_index++)
+		for (var r_index = 0; r_index < rows.length; r_index++)
 		{
-			var modified_man_row = [];
-			for (var wom_index = 0; wom_index < wom_row_index.length; wom_index++)
+			var modified_row = [];
+			for (var c_index = 0; c_index < cols.length; c_index++)
 			{
-				modified_man_row.push(weights[man_index][wom_index]);
+				modified_row.push(weights[rows[r_index]][c_index]).weight;
 			}
-			cost_matrix.push(modified_man_row);
+			cost_matrix.push(modified_row);
 		}
 
 		var m = new Munkres();
