@@ -28,16 +28,16 @@ const metaData = {
 export class Home extends Component {
   constructor(props) {
     super(props);
-    console.log(this);
   }
 
   render() {
+    console.log(this.props);
     return (
       <section>
         <DocumentMeta {...metaData} />
         <TopImage />
-        <Games game={this.props.state.gameFilter}/>
-        <Character characters={Characters.characters} game={this.props.state.gameFilter}/>
+        <Games {...this.props}/>
+        <Character characters={Characters.characters} game={this.props.gameFilter}/>
       </section>
     );
   }

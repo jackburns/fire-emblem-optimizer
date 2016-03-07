@@ -10,8 +10,6 @@ export function gameFilter(state = initialState, action) {
       };
 
     default:
-      return {
-        state
-      }
+      return state;
   }
 }

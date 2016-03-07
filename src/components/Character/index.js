@@ -20,7 +20,6 @@ export class Character extends Component {
 
   render() {
 
-    console.log(this.props);
     return (
       <section className={`${styles}`}>
         <div className="container">
@@ -32,17 +31,14 @@ export class Character extends Component {
               </h2>
             </div>
           </div>
-           <div className="characters row">
+          <div className="characters row">
             {this.characters.map((character, key) => {
-                let classes = classNames({
-                    'disabled': !(character[this.props.game]),
-                    'disabled': character[this.props.game],
-                    'selected': character.selected
-                  });
-                classes += " character col-xs-4 col-sm-2 col-md-1 col-lg-1";
-                  console.log(classes);
-                  console.log(character);
-                  console.log(this.props.game);
+              let classes = classNames({
+                  'disabled': !(character[this.props.game]),
+                  'enabled': character[this.props.game],
+                  'selected': character.selected
+                });
+              classes += " character col-xs-4 col-sm-2 col-md-1 col-lg-1";
               return (
               <div className={classes} key={key}>
                 <div className="character-image">
@@ -55,7 +51,7 @@ export class Character extends Component {
 
               </div>
             )})}
-           </div>
+          </div>
         </div>
       </section>
     );
