@@ -54,7 +54,7 @@
 			"sex": "m",
 			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/1/12/Nishiki_portrait.png",
 			"birthright": true,
-			"conquest": true,
+			"conquest": false,
 			"revelation": true
 		}, {
 			"id": 7,
@@ -62,7 +62,7 @@
 			"sex": "m",
 			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/0/0e/Suzukaze_portrait.png",
 			"birthright": true,
-			"conquest": false,
+			"conquest": true,
 			"revelation": true
 		}, {
 			"id": 8,
@@ -134,7 +134,7 @@
 			"sex": "m",
 			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/b/ba/Tsubaki_portrait.png",
 			"birthright": true,
-			"conquest": true,
+			"conquest": false,
 			"revelation": true
 		}, {
 			"id": 17,
@@ -165,7 +165,7 @@
 			"name": "Beruka",
 			"sex": "f",
 			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/4/46/Belka_portrait.png",
-			"birthright": true,
+			"birthright": false,
 			"conquest": true,
 			"revelation": true
 		}, {
@@ -254,7 +254,7 @@
 			"sex": "f",
 			"imageURL": "http://vignette4.wikia.nocookie.net/fireemblem/images/c/ca/Oboro_portrait.png",
 			"birthright": true,
-			"conquest": true,
+			"conquest": false,
 			"revelation": true
 		}, {
 			"id": 32,
@@ -269,7 +269,7 @@
 			"name": "Peri",
 			"sex": "f",
 			"imageURL": "http://vignette3.wikia.nocookie.net/fireemblem/images/c/c3/Pieri_portrait.png",
-			"birthright": true,
+			"birthright": false,
 			"conquest": true,
 			"revelation": true
 		}, {
@@ -277,8 +277,8 @@
 			"name": "Rinkah",
 			"sex": "f",
 			"imageURL": "http://vignette2.wikia.nocookie.net/fireemblem/images/2/29/Rinka_portrait.png",
-			"birthright": false,
-			"conquest": true,
+			"birthright": true,
+			"conquest": false,
 			"revelation": true
 		}, {
 			"id": 35,
