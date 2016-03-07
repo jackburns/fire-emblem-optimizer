@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import Characters from './files/characters.json';
 
 /* components */
 import { TopImage } from 'components/TopImage';
 import { Character } from 'components/Character';
 import { Games } from 'components/Games';
+import * as GameActions from 'actions/gameFilter';
 
 const metaData = {
   title: 'Fire Emblem Optimizer',
@@ -18,19 +21,23 @@ const metaData = {
   },
 };
 
+@connect(
+  state => state.gameFilter,
+  dispatch => bindActionCreators(GameActions, dispatch)
+)
+export class Home extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-
-export class Home extends Component { 
   render() {
-      console.log(Characters.characters);
-
+    console.log(this.props);
     return (
       <section>
         <DocumentMeta {...metaData} />
         <TopImage />
-        <Character characters={Characters.characters} />
-        <Games />
-
+        <Games {...this.props}/>
+        <Character characters={Characters.characters} game={this.props.gameFilter}/>
       </section>
     );
   }
