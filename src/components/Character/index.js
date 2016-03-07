@@ -6,7 +6,7 @@ import { styles } from './styles.scss';
 export class Character extends Component {
   static propTypes = {
     characters: React.PropTypes.array,
-    fields: React.PropTypes.object,
+    game: React.PropTypes.object
   };
 
   constructor(props) {
@@ -17,10 +17,8 @@ export class Character extends Component {
     });
   }
 
-
-
   render() {
-    console.log(this.props.characters);
+    console.log(this.props);
     return (
       <section className={`${styles}`}>
         <div className="container">
