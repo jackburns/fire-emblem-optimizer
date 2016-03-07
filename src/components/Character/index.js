@@ -35,7 +35,7 @@ export class Character extends Component {
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
               <h2>
-                Boilerplate contains Yolo
+                Select Characters To Match
               </h2>
             </div>
           </div>
@@ -62,7 +62,7 @@ export class Character extends Component {
           </div>
           <div>
             <button className="btn btn-lg btn-default" onClick={() => this.handleToggle()}>
-              'Match'
+              Match
             </button>
           </div>
         </div>

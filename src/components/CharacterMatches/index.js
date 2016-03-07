@@ -63,7 +63,7 @@ export class CharacterMatches extends Component {
           </div>
           <div>
             <button className="btn btn-lg btn-default" onClick={() => this.handleToggle()}>
-              'Match'
+              Select
             </button>
           </div>
         </div>
