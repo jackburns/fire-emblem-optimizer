@@ -44,8 +44,8 @@ export function generateMatching(characters) {
 
 	var rows = [];
 	var cols = [];
-		for (var i = 0; i < characters.length; i++)
-		{
+	for (var i = 0; i < characters.length; i++)
+	{
 		if (characters[i].sex === "m") { 
 			rows.push(characters[i]);
 		} else{ 
