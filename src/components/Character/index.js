@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
 /* component styles */
 import { styles } from './styles.scss';
@@ -6,7 +7,7 @@ import { styles } from './styles.scss';
 export class Character extends Component {
   static propTypes = {
     characters: React.PropTypes.array,
-    fields: React.PropTypes.object,
+    game: React.PropTypes.string
   };
   constructor(props) {
     super(props);
@@ -26,10 +27,8 @@ export class Character extends Component {
     this.props.toggleMatching();
   }
 
-
-
   render() {
-    console.log(this.props.characters);
+
     return (
       <section className={`${styles}`}>
         <div className="container">

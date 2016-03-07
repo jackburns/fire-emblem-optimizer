@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import Characters from './files/characters.json';
 
 /* components */
@@ -39,9 +41,7 @@ export class Home extends Component {
     super(props);
     this.props.loadCharacters(Characters.characters);
   }
-
-
-export class Home extends Component {
+  
   render() {
     let pageComponents;
     if(this.props.displayMatching){

@@ -95,5 +95,8 @@ export function generateMatching(characters) {
 
 	console.log(total_cost);
 
-	return result
+	return {
+		pairs: result,
+		score: total_cost
+	}
 }

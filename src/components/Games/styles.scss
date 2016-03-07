@@ -3,7 +3,21 @@
 
   padding: 50px 0;
 
-  border-top: 1px solid #CCC;
+  border: 2px solid #CCC;
+
+
+
+  .game {
+    padding: 5px;
+    &:hover {
+      border: 2px solid black;
+    }
+    &.selected {
+        border: 2px solid green;
+    }
+  }
+
+
 
   h2 {
     margin-bottom: 50px;

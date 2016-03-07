@@ -14,8 +14,8 @@ export class CharacterMatches extends Component {
     this.selectedCharacters = this.props.characters.filter((char) => {
       return char.selected;
     });
-    this.pairs = generateMatching(this.selectedCharacters);
-    console.log(this.pairs);
+    this.matches = generateMatching(this.selectedCharacters);
+    console.log(this.matches);
   }
 
   handleToggle = () => {
@@ -29,12 +29,12 @@ export class CharacterMatches extends Component {
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
               <h2>
-                Boilerplate contains Yolo
+                Generated Ideal Matches Score: {this.matches.score}
               </h2>
             </div>
           </div>
           <div className="characters row">
-            {this.pairs.map((pair, key) => {
+            {this.matches.pairs.map((pair, key) => {
               let char1 = this.selectedCharacters.filter((char) => {
                 return char.id === pair.id1;
               }).shift();
