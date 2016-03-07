@@ -4,7 +4,7 @@ import Characters from './files/characters.json';
 
 /* components */
 import { TopImage } from 'components/TopImage';
-import { Tools } from 'components/Tools';
+import { Character } from 'components/Character';
 import { Projects } from 'components/Projects';
 
 const metaData = {
@@ -23,13 +23,13 @@ const metaData = {
 
 export class Home extends Component { 
   render() {
-      console.log(Characters);
+      console.log(Characters.characters);
 
     return (
       <section>
         <DocumentMeta {...metaData} />
         <TopImage />
-        <Tools />
+        <Character characters={Characters.characters} />
         <Projects />
       </section>
     );

@@ -1,0 +1,50 @@
+:local(.styles) {
+  position: relative;
+
+  padding: 50px 0;
+  width: 100px;
+  height: 100px;
+
+	.character:nth-child(12n + 1) {
+		clear: both;
+	};
+
+  .character-image {
+  	&:hover {
+  		border:3px solid red;
+  	}
+  	
+  	border:3px solid black;
+  	img {
+  		width: 100%;
+  	}
+  }
+
+  .disable {
+  	&:hover {
+  		border:3px solid red;
+  	}
+  	background-color:rgba(0,0,0,0);
+  	color:white;
+  	z-index: -999999999;
+  	border:3px solid green;
+  }
+
+  .enable {
+  	&:hover {
+  		border:3px solid red;
+  	}
+  	margin:auto;
+  	border:3px solid black;
+  }
+
+  .checked {
+
+  }
+
+  .overlay {
+  	color:rgba(0,0,0,.5);
+  	z-index: 999999999;
+  }
+
+}
