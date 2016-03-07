@@ -6,21 +6,21 @@
   background: url(files/nyc.jpg);
   background-size: 100% auto;
 
-  height: 500px;
+  height: 180px;
 
   @media (min-width: 768px) and (max-width: 992px) {
-    height: 340px;
+    height: 120px;
   }
 
   @media (#{ $phone }) {
-    height: 320px;
+    height: 80px;
   }
 
   h1.title {
     color: #FFF;
-    font-size: 60px;
+    font-size: 40px;
 
-    margin-top: 20%;
+    margin-top: 5%;
   }
 
   p {

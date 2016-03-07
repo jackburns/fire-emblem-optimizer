@@ -5,16 +5,15 @@ import Characters from './files/characters.json';
 /* components */
 import { TopImage } from 'components/TopImage';
 import { Character } from 'components/Character';
-import { Projects } from 'components/Projects';
+import { Games } from 'components/Games';
 
 const metaData = {
-  title: 'Redux Easy Boilerplate',
-  description: 'Start you project easy and fast with modern tools',
-  canonical: 'http://example.com/path/to/page',
+  title: 'Fire Emblem Optimizer',
+  description: 'Optimize your Fire Emblem Fates character pairings',
   meta: {
     charset: 'utf-8',
     name: {
-      keywords: 'react,meta,document,html,tags',
+      keywords: 'fire,emblem,fates,character,pair,match,optimzer,optimize',
     },
   },
 };
@@ -30,7 +29,8 @@ export class Home extends Component {
         <DocumentMeta {...metaData} />
         <TopImage />
         <Character characters={Characters.characters} />
-        <Projects />
+        <Games />
+
       </section>
     );
   }
