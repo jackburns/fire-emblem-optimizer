@@ -1,35 +1,28 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
+import { generateMatching } from '../../utils/generateMatching';
 
 /* component styles */
 import { styles } from './styles.scss';
 
-export class Character extends Component {
+export class CharacterMatches extends Component {
   static propTypes = {
     characters: React.PropTypes.array,
-    fields: React.PropTypes.object,
   };
   constructor(props) {
     super(props);
-    console.log(this);
+    this.selectedCharacters = this.props.characters.filter((char) => {
+      return char.selected;
+    });
+    this.pairs = generateMatching(this.selectedCharacters);
+    console.log(this.pairs);
   }
-
-
-  handleSelect = (character) => {
-    console.log(this.props);
-    if (character[this.props.game]) {
-      console.log('hi');
-      this.props.selectCharacter(character.id);
-    }
-  };
 
   handleToggle = () => {
     this.props.toggleMatching();
   }
 
-
-
   render() {
-    console.log(this.props.characters);
     return (
       <section className={`${styles}`}>
         <div className="container">
@@ -41,22 +34,29 @@ export class Character extends Component {
             </div>
           </div>
           <div className="characters row">
-            {this.props.characters.map((character, key) => {
-              let classes = classNames({
-                  'disabled': !(character[this.props.game]),
-                  'enabled': character[this.props.game],
-                  'selected': character.selected
-                });
-              classes += " character col-xs-4 col-sm-2 col-md-1 col-lg-1";
+            {this.pairs.map((pair, key) => {
+              let char1 = this.selectedCharacters.filter((char) => {
+                return char.id === pair.id1;
+              }).shift();
+              let char2 = this.props.characters.filter((char) => {
+                return char.id === pair.id2;
+              }).shift();
               return (
-              <div className={classes} key={key} onClick={ () => this.handleSelect(character)}>
+              <div className="pair col-xs-6 col-sm-3 col-md-2 col-lg-2" key={key}>
                 <div className="character-image">
                   <div className="overlay"></div>
-                  <img src={character.imageURL}/>
+                  <img src={char1.imageURL}/>
                 </div>
                 <h4>
-                  {character.name}
+                  {char1.name}
                 </h4>
+                  <div className="character-image">
+                    <div className="overlay"></div>
+                    <img src={char2.imageURL}/>
+                  </div>
+                  <h4>
+                    {char2.name}
+                  </h4>
 
               </div>
             )})}

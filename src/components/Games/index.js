@@ -21,6 +21,19 @@ GAMES = GAMES.map(game => {
 console.log(GAMES);
 
 export class Games extends Component {
+  static propTypes = {
+    dispatch: React.PropTypes.func,
+    updateGame: React.PropTypes.func,
+  };
+  constructor(props) {
+    super(props);
+  }
+  handleChange = (name) => {
+    if (this.props.gameFilter != name) {
+      this.props.updateGame(name);
+    }
+    event.preventDefault();
+  };
   render() {
     return (
       <section className={`${styles}`}>
