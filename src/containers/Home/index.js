@@ -21,21 +21,14 @@ const metaData = {
   },
 };
 
-console.log(GameActions);
-
-function mapStateToProps(state) {
-  return {
-    gameFilter: state.gameFilter
-  }
-}
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(GameActions, dispatch)
-  }
-}
+@connect(
+  state => state.gameFilter,
+  dispatch => bindActionCreators(GameActions, dispatch)
+)
 export class Home extends Component {
   constructor(props) {
     super(props);
+    console.log(this);
   }
 
   render() {
@@ -43,8 +36,8 @@ export class Home extends Component {
       <section>
         <DocumentMeta {...metaData} />
         <TopImage />
-        <Games game={state.selectedGame}/>
-        <Character characters={Characters.characters} game={state.selectedGame} />
+        <Games game={this.props.state.gameFilter}/>
+        <Character characters={Characters.characters} game={this.props.state.gameFilter}/>
       </section>
     );
   }

@@ -1,14 +1,12 @@
 const initialState = {
-  gameFilter: 'relevation'
+  gameFilter: 'revelation'
 };
 
 export function gameFilter(state = initialState, action) {
   switch (action.type) {
     case 'UPDATE_GAME':
       return {
-        ...state, {
-          gameFilter: action.text
-        }
+        gameFilter: action.text
       };
 
     default:
