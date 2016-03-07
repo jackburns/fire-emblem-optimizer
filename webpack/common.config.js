@@ -64,7 +64,12 @@ const common = {
     }, {
       test: /\.jpg$/,
       loader: 'file?name=[name].[ext]',
-    }],
+    }, {
+      test: /\.json$/, 
+      exclude: /node_modules/, 
+      loader: 'json',
+    }
+    ],
   },
 
   postcss: (webpack) => {

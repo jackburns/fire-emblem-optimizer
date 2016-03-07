@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
+import Characters from './files/characters.json';
 
 /* components */
 import { TopImage } from 'components/TopImage';
@@ -18,8 +19,12 @@ const metaData = {
   },
 };
 
-export class Home extends Component {
+
+
+export class Home extends Component { 
   render() {
+      console.log(Characters);
+
     return (
       <section>
         <DocumentMeta {...metaData} />
