@@ -4,31 +4,46 @@ import classNames from 'classnames';
 /* component styles */
 import { styles } from './styles.scss';
 
-export class Character extends Component {
+export class CharacterList extends Component {
   static propTypes = {
     characters: React.PropTypes.array,
     game: React.PropTypes.string
   };
   constructor(props) {
     super(props);
-    console.log(this);
   }
 
-
   handleSelect = (character) => {
-    console.log(this.props);
     if (character[this.props.game]) {
-      console.log('hi');
       this.props.selectCharacter(character.id);
     }
   };
 
   handleToggle = () => {
-    this.props.toggleMatching();
+    let selected = this.props.characters.filter((character) => {
+      return character.selected;
+    });
+    let girls = [],
+        guys = [];
+
+    selected.map((character) => {
+      character.sex === "f" ? girls.push(character) : guys.push(character);
+    });
+
+    if (girls.length > 0 && guys.length > 0) {
+      this.props.toggleMatching();
+      this.error = "";
+    } else {
+      this.error = "Please select at least 1 guy and 1 girl character to match";
+      this.forceUpdate();
+    }
+  }
+
+  handleReset = () => {
+    this.props.resetSelected();
   }
 
   render() {
-
     return (
       <section className={`${styles}`}>
         <div className="container">
@@ -41,9 +56,8 @@ export class Character extends Component {
           </div>
           <div className="characters row">
             {this.props.characters.map((character, key) => {
+              if (character[this.props.game]) {
               let classes = classNames({
-                  'disabled': !(character[this.props.game]),
-                  'enabled': character[this.props.game],
                   'selected': character.selected
                 });
               classes += " character col-xs-4 col-sm-2 col-md-1 col-lg-1";
@@ -56,13 +70,16 @@ export class Character extends Component {
                 <h4>
                   {character.name}
                 </h4>
-
               </div>
-            )})}
+            )}})}
           </div>
           <div>
+            <p className="error">{this.error}</p>
             <button className="btn btn-lg btn-default" onClick={() => this.handleToggle()}>
               Match
+            </button>
+            <button className="btn btn-lg btn-default" onClick={() => this.handleReset()}>
+              Reset
             </button>
           </div>
         </div>

@@ -6,7 +6,7 @@ import Characters from './files/characters.json';
 
 /* components */
 import { TopImage } from 'components/TopImage';
-import { Character } from 'components/Character';
+import { CharacterList } from 'components/CharacterList';
 import { Games } from 'components/Games';
 import { CharacterMatches } from 'components/CharacterMatches';
 import * as GameActions from 'actions/gameFilter';
@@ -41,7 +41,7 @@ export class Home extends Component {
     super(props);
     this.props.loadCharacters(Characters.characters);
   }
-  
+
   render() {
     let pageComponents;
     if(this.props.displayMatching){
@@ -50,11 +50,12 @@ export class Home extends Component {
       pageComponents =
         <div>
           <Games gameFilter={this.props.gameFilter} updateGame={this.props.updateGame}/>
-          <Character
+          <CharacterList
             characters={this.props.characters}
             game={this.props.gameFilter}
             selectCharacter={this.props.selectCharacter}
-            toggleMatching={this.props.toggleMatching}/>
+            toggleMatching={this.props.toggleMatching}
+            resetSelected={this.props.resetSelected}/>
         </div>;
 
     }
@@ -62,7 +63,9 @@ export class Home extends Component {
       <section>
         <DocumentMeta {...metaData} />
         <TopImage />
-        {pageComponents}
+        <div className="container">
+          {pageComponents}
+        </div>
       </section>
     );
   }

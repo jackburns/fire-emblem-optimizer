@@ -18,6 +18,14 @@ export function characters(state = initialState, action) {
         ...state,
         characters: [...action.characters]
       }
+    case 'RESET_SELECTED':
+      return {
+        ...state,
+        characters: [
+          ...state.characters.map((character) =>
+          Object.assign({}, character, { selected: false}))
+        ]
+      }
     default:
       return state;
   }

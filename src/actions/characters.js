@@ -11,3 +11,10 @@ export function loadCharacters(characters) {
     characters,
   };
 }
+
+export function resetSelected(item) {
+  return {
+    type: 'RESET_SELECTED',
+    item
+  };
+}

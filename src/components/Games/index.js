@@ -43,7 +43,7 @@ export class Games extends Component {
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
               <h2>
-                Select game
+                Select Game
               </h2>
             </div>
           </div>
@@ -52,7 +52,7 @@ export class Games extends Component {
             let classes = classNames({
               'selected': game.name === this.props.gameFilter
             });
-            classes += " game col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center"
+            classes += " game col-xs-11 col-sm-4 col-md-4 col-lg-4 text-center"
             return (
               <div className={classes}
                 key={key}
