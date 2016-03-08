@@ -15,18 +15,16 @@ export class TopImage extends Component {
   render() {
     return (
       <section className={`${styles}`}>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-              <LoadingOrderAnimation animation="fade-in"
+            <div>
+             <LoadingOrderAnimation animation="fade-in"
                 move="from-top-to-bottom"
                 distance={30}
                 speed={700}
                 wait={700}
               >
-                <h1 className="title">
-                  Fire Emblem Optimizer
-                </h1>
+             <div className="logo">
+                <img src={require("./files/FEOptimizerLogo.png")}/>
+              </div>
               </LoadingOrderAnimation>
               <LoadingOrderAnimation animation="fade-in"
                 move="from-top-to-bottom"
@@ -35,8 +33,6 @@ export class TopImage extends Component {
                 wait={900}
               >
               </LoadingOrderAnimation>
-            </div>
-          </div>
         </div>
       </section>
     );
