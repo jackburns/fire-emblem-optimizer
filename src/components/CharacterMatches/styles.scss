@@ -2,16 +2,16 @@
   position: relative;
 
   padding: 50px 0;
-  width: 100px;
-  height: 100px;
 
 	.character:nth-child(12n + 1) {
 		clear: both;
 	};
 
   .character-image {
+    position: relative;
   	img {
-  		width: 100%;
+      height: auto;
+  		width: auto;
   	}
   }
 }

@@ -26,7 +26,7 @@ export class CharacterMatches extends Component {
       <section className={`${styles}`}>
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <div className="col-xs-12 text-center">
               <h2>
                 Generated Ideal Matches Score: {this.matches.score}
               </h2>
@@ -40,15 +40,19 @@ export class CharacterMatches extends Component {
               let char2 = this.props.characters.filter((char) => {
                 return char.id === pair.id2;
               }).shift();
+
               return (
-              <div className="pair col-xs-6 col-sm-3 col-md-2 col-lg-2" key={key}>
-                <div className="character-image">
-                  <div className="overlay"></div>
-                  <img src={char1.imageURL}/>
+              <div className="pair col-xs-12 col-md-6 col-lg-4" key={key}>
+                <div className="character col-xs-6">
+                  <div className="character-image">
+                    <div className="overlay"></div>
+                    <img src={char1.imageURL}/>
+                  </div>
+                  <h4>
+                    {char1.name}
+                  </h4>
                 </div>
-                <h4>
-                  {char1.name}
-                </h4>
+                <div className="character col-xs-6">
                   <div className="character-image">
                     <div className="overlay"></div>
                     <img src={char2.imageURL}/>
@@ -56,6 +60,7 @@ export class CharacterMatches extends Component {
                   <h4>
                     {char2.name}
                   </h4>
+                </div>
 
               </div>
             )})}
