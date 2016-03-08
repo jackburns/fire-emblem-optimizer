@@ -12,10 +12,9 @@ export class CharacterMatches extends Component {
   constructor(props) {
     super(props);
     this.selectedCharacters = this.props.characters.filter((char) => {
-      return char.selected;
+      return char.selected && char[this.props.gameFilter];
     });
     this.matches = generateMatching(this.selectedCharacters);
-    console.log(this.matches);
   }
 
   handleToggle = () => {

@@ -45,7 +45,10 @@ export class Home extends Component {
   render() {
     let pageComponents;
     if(this.props.displayMatching){
-      pageComponents = <CharacterMatches characters={this.props.characters} toggleMatching={this.props.toggleMatching}/>
+      pageComponents = <CharacterMatches
+        characters={this.props.characters}
+        toggleMatching={this.props.toggleMatching}
+        gameFilter={this.props.gameFilter}/>
     } else {
       pageComponents =
         <div>

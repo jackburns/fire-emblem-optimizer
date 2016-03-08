@@ -21,7 +21,7 @@ export class CharacterList extends Component {
 
   handleToggle = () => {
     let selected = this.props.characters.filter((character) => {
-      return character.selected;
+      return character.selected && character[this.props.game];
     });
     let girls = [],
         guys = [];
