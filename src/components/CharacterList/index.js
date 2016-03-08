@@ -79,7 +79,7 @@ export class CharacterList extends Component {
               Match
             </button>
             <button className="btn btn-lg btn-default" onClick={() => this.handleReset()}>
-              Reset
+              Reset Seletions
             </button>
           </div>
         </div>

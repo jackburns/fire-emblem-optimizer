@@ -4,6 +4,11 @@
 @import 'typography';
 @import 'links';
 
+@font-face {
+  font-family: Chiaro;
+  src: url("fonts/FOT-ChiaroStd-B.otf") format("opentype");
+}
+
 :global(body) {
   position: relative;
 

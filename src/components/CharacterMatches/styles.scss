@@ -7,10 +7,24 @@
 		clear: both;
 	};
 
+  .pair {
+    text-align: center;
+  }
+
+  .heart {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    img {
+      height: 100px;
+      width: 100px;
+      opacity: .7;
+    }
+  }
   .character-image {
     position: relative;
   	img {
-      height: auto;
+      height: 200px;
   		width: auto;
   	}
   }

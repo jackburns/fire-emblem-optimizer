@@ -52,6 +52,7 @@ export class CharacterMatches extends Component {
                     {char1.name}
                   </h4>
                 </div>
+
                 <div className="character col-xs-6">
                   <div className="character-image">
                     <div className="overlay"></div>
@@ -61,13 +62,16 @@ export class CharacterMatches extends Component {
                     {char2.name}
                   </h4>
                 </div>
+                <div className="heart">
+                  <img src="http://pngimg.com/upload/heart_PNG706.png"/>
+                </div>
 
               </div>
             )})}
           </div>
           <div>
             <button className="btn btn-lg btn-default" onClick={() => this.handleToggle()}>
-              Select
+              Back To Select
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 /* Typography */
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Chiaro', serif !important;
   font-weight: 300;
 }
 
@@ -12,8 +12,10 @@ h4,
 h5,
 h6 {
   font-weight: 300;
+  font-family: 'Chiaro';
 }
 
 p {
   font-size: 16px;
+  font-family: 'Chiaro';
 }
