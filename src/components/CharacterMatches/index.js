@@ -69,7 +69,7 @@ export class CharacterMatches extends Component {
               </div>
             )})}
           </div>
-          <div>
+          <div className="back-select">
             <button className="btn btn-lg btn-default" onClick={() => this.handleToggle()}>
               Back To Select
             </button>

@@ -34,7 +34,7 @@ export class CharacterList extends Component {
       this.props.toggleMatching();
       this.error = "";
     } else {
-      this.error = "Please select at least 1 guy and 1 girl character to match";
+      this.error = "Please select at least 1 male and 1 female character to match";
       this.forceUpdate();
     }
   }
@@ -73,7 +73,7 @@ export class CharacterList extends Component {
               </div>
             )}})}
           </div>
-          <div>
+          <div className="character-buttons">
             <p className="error">{this.error}</p>
             <button className="btn btn-lg btn-default" onClick={() => this.handleToggle()}>
               Match
