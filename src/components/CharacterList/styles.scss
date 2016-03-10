@@ -4,22 +4,27 @@
 :local(.styles) {
   position: relative;
 
-  padding: 50px 0;
+  padding: 20px 0;
 
   .character {
     text-align: center;
   }
 
-  .character:nth-child(12n + 1) {
+  .character:nth-child(6n + 2) {
 		clear: both;
 	}
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .character:nth-child(6n + 2) {
+      clear: both;
+    }
+  }
   @media (min-width: 768px) and (max-width: 992px) {
-    .character:nth-child(6n + 1) {
+    .character:nth-child(3n+2) {
   		clear: both;
   	}
   }
   @media (#{ $phone }) {
-    .character:nth-child(3n + 1) {
+    .character:nth-child(3n + 2) {
   		clear: both;
   	}
   }
@@ -67,4 +72,36 @@
     }
   }
 
+  .wrapper { 
+    overflow:hidden;
+  }
+
+  .males {
+    float:left;
+    overflow: hidden;
+    max-width: 51%;
+  }
+
+  .females {
+    float:right;
+    overflow:hidden;
+    max-width: 51%;
+  }
+
+  .gender {
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .italicized {
+    font-style: italic;
+  }
+
+  .divider {
+    position: absolute;
+    height: 600px;
+    width: 100px;
+    left: 50%;
+    border-left:2px solid black;
+  }
 }

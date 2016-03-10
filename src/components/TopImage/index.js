@@ -20,18 +20,11 @@ export class TopImage extends Component {
                 move="from-top-to-bottom"
                 distance={30}
                 speed={700}
-                wait={700}
+                wait={200}
               >
              <div className="logo">
                 <img src={require("./files/FEOptimizerLogo.png")}/>
               </div>
-              </LoadingOrderAnimation>
-              <LoadingOrderAnimation animation="fade-in"
-                move="from-top-to-bottom"
-                distance={60}
-                speed={700}
-                wait={900}
-              >
               </LoadingOrderAnimation>
         </div>
       </section>

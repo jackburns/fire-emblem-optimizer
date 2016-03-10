@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import LoadingOrderAnimation from 'react-loading-order-with-animation';
 import classNames from 'classnames';
 
 /* component styles */
@@ -9,11 +10,11 @@ let GAMES = [{
   imageURL: 'http://vignette3.wikia.nocookie.net/fireemblem/images/c/c7/FEF_Birthright_NA%26EU_logo.png',
   name: 'birthright',
 }, {
+  imageURL: 'http://vignette2.wikia.nocookie.net/fireemblem/images/6/61/FEF_Revelation_NA%26EU_logo.png',
+  name: 'revelation', 
+}, {
   imageURL: 'http://vignette4.wikia.nocookie.net/fireemblem/images/8/83/FEF_Conquest_NA%26EU_logo.png',
   name: 'conquest',
-}, {
-  imageURL: 'http://vignette2.wikia.nocookie.net/fireemblem/images/6/61/FEF_Revelation_NA%26EU_logo.png',
-  name: 'revelation',
 }];
 
 GAMES = GAMES.map(game => {
@@ -47,6 +48,11 @@ export class Games extends Component {
               </h2>
             </div>
           </div>
+          <LoadingOrderAnimation animation="fade-in"
+                                     move="from-bottom-to-top"
+                                     distance={50}
+                                     speed={1000}
+                                     wait={500}>
           <div className="row">
           {GAMES.map((game, key) => {
             let classes = classNames({
@@ -61,6 +67,7 @@ export class Games extends Component {
               </div>
           )})}
           </div>
+          </LoadingOrderAnimation>
         </div>
       </section>
     );
