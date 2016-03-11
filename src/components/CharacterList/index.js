@@ -54,7 +54,7 @@ export class CharacterList extends Component {
               </h2>
             </div>                                      
           </div>
-          <div> 
+          <div>
           <div className="row">
           <LoadingOrderAnimation animation="fade-in"
                                      move="from-top-to-bottom"
@@ -68,7 +68,7 @@ export class CharacterList extends Component {
               let classes = classNames({
                   'selected': character.selected
                 });
-              classes += " character col-xs-4 col-sm-4 col-md-2 col-lg-2";
+              classes += " character col-xs-12 col-sm-4 col-md-2 col-lg-2";
               return (
               <div className={classes} key={key} onClick={ () => this.handleSelect(character)}>       
                 <div className="character-image">
@@ -82,14 +82,8 @@ export class CharacterList extends Component {
             )}})}
           </div>
           </LoadingOrderAnimation>
-          <LoadingOrderAnimation animation="fade-in"
-                                     move="from-bottom-to-top"
-                                     distance={50}
-                                     speed={1000}
-                                     wait={500}>  
-              <div className="divider"></div>
-          </LoadingOrderAnimation>
-          <LoadingOrderAnimation animation="fade-in"
+          <div className="divider"></div>
+          <LoadingOrderAnimation  animation="fade-in"
                                      move="from-top-to-bottom"
                                      distance={50}
                                      speed={1000}
@@ -101,10 +95,9 @@ export class CharacterList extends Component {
               let classes = classNames({
                   'selected': character.selected
                 });
-              classes += " character col-xs-4 col-sm-4 col-md-2 col-lg-2";
+              classes += " character col-xs-12 col-sm-4 col-md-2 col-lg-2";
               return (
-              <div className={classes} key={key} onClick={ () => this.handleSelect(character)}>
-              
+              <div className={classes} key={key} onClick={ () => this.handleSelect(character)}>              
                 <div className="character-image">
                   <div className="overlay"></div>
                   <img src={character.imageURL}/>

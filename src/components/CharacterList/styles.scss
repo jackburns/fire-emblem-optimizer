@@ -23,11 +23,6 @@
   		clear: both;
   	}
   }
-  @media (#{ $phone }) {
-    .character:nth-child(3n + 2) {
-  		clear: both;
-  	}
-  }
 
   .character-image {
   	img {
@@ -77,15 +72,13 @@
   }
 
   .males {
-    float:left;
-    overflow: hidden;
-    max-width: 51%;
+    float: left;
+    width: 50%;
   }
 
   .females {
-    float:right;
-    overflow:hidden;
-    max-width: 51%;
+    float: right;
+    width: 50%;
   }
 
   .gender {
@@ -99,9 +92,20 @@
 
   .divider {
     position: absolute;
-    height: 600px;
-    width: 100px;
+    margin: auto auto;
+    width: 0%;
     left: 50%;
-    border-left:2px solid black;
+    height:100%;
+    border: 1px solid black;
+  }
+
+  .row {
+    height: 100%;
+    display: table-cell;
+    position: relative;
+  }
+
+  .test {
+    position: static !important;
   }
 }
